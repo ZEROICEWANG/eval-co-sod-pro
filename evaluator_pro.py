@@ -38,13 +38,12 @@ class Eval_thread():
             Res['Recall'] = recall
             Res['Fm'] = Fm
 
-            '''auc, TPR, FPR = self.Eval_auc()
+            auc, TPR, FPR = self.Eval_auc()
             TPR = TPR.cpu().numpy()
-            FPR = FPR.cpu().numpy()'''
-            auc = 0
-            Res['AUC'] = 0  # auc
-            Res['TPR'] = 0  # TPR
-            Res['FPR'] = 0  # FPR
+            FPR = FPR.cpu().numpy()
+            Res['AUC'] = auc
+            Res['TPR'] = TPR
+            Res['FPR'] = FPR
 
             Em = self.Eval_Emeasure()
             max_e = Em.max().item()
